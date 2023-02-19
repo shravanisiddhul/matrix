@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+void arith(float x,float y)
+{
+    int choice;
+    cout<<"\nChoose operations to perform:";
+    cout<<"\n1.Addition";
+    cout<<"\n2.Subtraction";
+    cout<<"\n3.Multiplication";
+    cout<<"\n4.Division";
+    cout<<"\nEnter your choice:";
+    cin>>choice;
+    switch(choice)
+    {
+        case 1:
+        {
+            cout<<"Addition:"<<x+y;
+            break;
+        }
+        case 2:
+        {
+            cout<<"Subtraction:"<<y-x;
+            break;
+            
+        }
+        case 3:
+        {
+            cout<<"Multiplication:"<<x*y;
+            break;
+        }
+        case 4:
+        {
+            cout<<"Division:"<<y/x;
+            break;
+        }
+    }
+}
+int main()
+{
+    float x,y;
+    cout<<"Enter two Numbers:";
+    cin>>x>>y;
+    arith(x,y);
+    return 0;
+}
