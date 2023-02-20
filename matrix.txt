@@ -1,45 +1,40 @@
 #include<iostream>
 using namespace std;
-void arith(float x,float y)
-{
-    int choice;
-    cout<<"\nChoose operations to perform:";
-    cout<<"\n1.Addition";
-    cout<<"\n2.Subtraction";
-    cout<<"\n3.Multiplication";
-    cout<<"\n4.Division";
-    cout<<"\nEnter your choice:";
-    cin>>choice;
-    switch(choice)
-    {
-        case 1:
-        {
-            cout<<"Addition:"<<x+y;
-            break;
-        }
-        case 2:
-        {
-            cout<<"Subtraction:"<<y-x;
-            break;
-            
-        }
-        case 3:
-        {
-            cout<<"Multiplication:"<<x*y;
-            break;
-        }
-        case 4:
-        {
-            cout<<"Division:"<<y/x;
-            break;
-        }
-    }
-}
 int main()
 {
-    float x,y;
-    cout<<"Enter two Numbers:";
-    cin>>x>>y;
-    arith(x,y);
-    return 0;
+    int r,c,a[20][20],b[20][20],sum[20][20],i,j;
+    cout<<"Enter number of rows(1 to 20):"<<endl;
+    cin>>r;
+    cout<<"Enter number of columns(1 to 20):"<<endl;
+    cin>>c;
+    
+    cout<<"Enter elements of 1st MAtrix:"<<endl;
+    for(i=0;i<r;++i)
+        for(j=0;j<c;++j)
+        {
+            cout<<"Enter elements of a"<<i+1<<j+1<<":"<<endl;
+            cin>>a[i][j];
+        }
+        
+    cout<<"Enter elements of 2st MAtrix:"<<endl;
+    for(i=0;i<r;++i)
+        for(j=0;j<c;++j)
+        {
+            cout<<"Enter elements of b"<<i+1<<j+1<<":"<<endl;
+            cin>>b[i][j];
+        }   
+    
+    for(i=0;i<r;++i)
+        for(j=0;j<c;++j)
+        {
+            sum[i][j]=a[i][j]+b[i][j];
+        }
+    cout<<"\nSum of two matrices:\n";
+    for(i=0;i<r;++i)
+        for(j=0;j<c;++j)
+        {
+            cout<<sum[i][j]<<" ";
+            if(j==c-1)
+                cout<<endl;
+        }
 }
